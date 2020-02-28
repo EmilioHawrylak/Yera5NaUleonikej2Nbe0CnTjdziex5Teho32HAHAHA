@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController characterControler;
+    public Camera cam; 
     public float movementSpeed = 4.0f;
     public float jumpHeight = 1.0f;
     public float currentJumpHeight = 0f;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 3.0f;
     public float mouseUpDown = 0.0f;
     public float mouseUpDownRange = 90.0f;
+    public float test;
 
     void Start()
     {
@@ -65,14 +67,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(0, mouseLeftRight, 0);
+        float mouseUpDown = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        cam.transform.Rotate(-mouseUpDown,0, 0);
 
-
-        mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+       /* mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 
 
         mouseUpDown = Mathf.Clamp(mouseUpDown, -mouseUpDownRange, mouseUpDownRange);
 
-        Camera.main.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);
+       // Camera.main.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);\
+       */
     }
 }
 
