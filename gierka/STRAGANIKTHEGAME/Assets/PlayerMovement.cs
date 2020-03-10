@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController characterControler;
-    public Camera cam;
-    public GameObject inventory;
+    public Camera cam; 
     public float movementSpeed = 4.0f;
     public float jumpHeight = 1.0f;
     public float currentJumpHeight = 0f;
@@ -60,30 +59,16 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(movementLeftRight, currentJumpHeight, movementFrontBack);
 
         movement = transform.rotation * movement;
-        if (inventory.active == false)
-        {
-            characterControler.Move(movement * Time.deltaTime);
-        }
-        //////////////////////////////
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (inventory.active == false)
-            {
-                inventory.SetActive(true);
-            }
-            else { inventory.SetActive(false); }
-        }
+
+        characterControler.Move(movement * Time.deltaTime);
     }
 
     private void mouse()
     {
-        if (inventory.active == false)
-        {
-            float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
-            transform.Rotate(0, mouseLeftRight, 0);
-            float mouseUpDown = Input.GetAxis("Mouse Y") * mouseSensitivity;
-            cam.transform.Rotate(-mouseUpDown, 0, 0);
-        }
+        float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+        transform.Rotate(0, mouseLeftRight, 0);
+        float mouseUpDown = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        cam.transform.Rotate(-mouseUpDown,0, 0);
 
        /* mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 
