@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else { inventory.SetActive(false); }
         }
+        ////////////////////////////////
     }
 
     private void mouse()
