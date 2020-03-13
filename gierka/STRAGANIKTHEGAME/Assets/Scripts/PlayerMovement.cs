@@ -17,9 +17,12 @@ public class PlayerMovement : MonoBehaviour
     public float mouseUpDownRange = 90.0f;
     public float test;
 
+    public HouseDevelopment HD;
+
     void Start()
     {
         characterControler = GetComponent<CharacterController>();
+        HD = GetComponent<HouseDevelopment>();
     }
 
     
@@ -27,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
     {
         keyboard();
         mouse();
+
+        if (Input.GetKey(KeyCode.R) && HD.canOpen)
+        {
+            HD.OpenDevelopmentPanel = true;
+        }
     }
 
     private void keyboard()
@@ -57,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = 4.0f;
         }
 
-        Vector3 movement = new Vector3(movementLeftRight, currentJumpHeight, movementFrontBack);
+        Vector3 movement = new Vector3(movementLeftRight, jumpHeight, movementFrontBack);
 
         movement = transform.rotation * movement;
         if (inventory.active == false)
