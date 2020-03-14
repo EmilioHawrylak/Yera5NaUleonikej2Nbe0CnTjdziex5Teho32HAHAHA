@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         else if (!characterControler.isGrounded)
         {
 
-            currentJumpHeight += Physics.gravity.y * Time.deltaTime;
+            //currentJumpHeight += Physics.gravity.y * Time.deltaTime;
         }
 
         if (Input.GetKey("left shift"))
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = 4.0f;
         }
 
-        Vector3 movement = new Vector3(movementLeftRight, jumpHeight, movementFrontBack);
+        Vector3 movement = new Vector3(movementLeftRight, 0 /*jumpHeight*/, movementFrontBack);
 
         movement = transform.rotation * movement;
         if (inventory.active == false)
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
             transform.Rotate(0, mouseLeftRight, 0);
             float mouseUpDown = Input.GetAxis("Mouse Y") * mouseSensitivity;
-            cam.transform.Rotate(-mouseUpDown, 0, 0);
+            transform.Rotate(-mouseUpDown, 0, 0);
         }
 
        /* mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;

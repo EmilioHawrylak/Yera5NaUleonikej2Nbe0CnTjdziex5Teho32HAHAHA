@@ -9,5 +9,6 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         transform.position = follow.position + offset;
+        transform.rotation = follow.rotation;
     }
 }
