@@ -5,36 +5,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController characterControler;
-    public Camera cam;
-    public GameObject inventory;
-    public float movementSpeed = 4.0f;
-    public float jumpHeight = 1.0f;
+    public float movementSpeed = 9.0f;
+    public float jumpHeight = 7.0f;
     public float currentJumpHeight = 0f;
     public float runningSpeed = 7.0f;
 
     public float mouseSensitivity = 3.0f;
     public float mouseUpDown = 0.0f;
     public float mouseUpDownRange = 90.0f;
-    public float test;
 
-    public HouseDevelopment HD;
+    HouseDevelopment HD;
 
-    void Start()
+    private void Start()
     {
         characterControler = GetComponent<CharacterController>();
-        HD = GetComponent<HouseDevelopment>();
     }
 
-    
-    void Update()
+    private void Update()
     {
         keyboard();
         mouse();
-
-        if (Input.GetKey(KeyCode.R) && HD.canOpen)
-        {
-            HD.OpenDevelopmentPanel = true;
-        }
     }
 
     private void keyboard()
@@ -53,8 +43,12 @@ public class PlayerMovement : MonoBehaviour
         else if (!characterControler.isGrounded)
         {
 
-            //currentJumpHeight += Physics.gravity.y * Time.deltaTime;
+            currentJumpHeight += Physics.gravity.y * Time.deltaTime;
         }
+
+        //Debug.Log (Physics.gravity.y);
+
+
 
         if (Input.GetKey("left shift"))
         {
@@ -62,47 +56,27 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            movementSpeed = 4.0f;
+            movementSpeed = 9.0f;
         }
 
-        Vector3 movement = new Vector3(movementLeftRight, 0 /*jumpHeight*/, movementFrontBack);
+        Vector3 movement = new Vector3(movementLeftRight, currentJumpHeight, movementFrontBack);
 
         movement = transform.rotation * movement;
-        if (inventory.active == false)
-        {
-            characterControler.Move(movement * Time.deltaTime);
-        }
-        //////////////////////////////
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (inventory.active == false)
-            {
-                inventory.SetActive(true);
-            }
-            else { inventory.SetActive(false); }
-        }
-        ////////////////////////////////
-    }
+        characterControler.Move(movement * Time.deltaTime);
 
+    }
     private void mouse()
     {
-        if (inventory.active == false)
-        {
-            float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
-            transform.Rotate(0, mouseLeftRight, 0);
-            float mouseUpDown = Input.GetAxis("Mouse Y") * mouseSensitivity;
-            transform.Rotate(-mouseUpDown, 0, 0);
-        }
 
-       /* mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float mouseLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+        transform.Rotate(0, mouseLeftRight, 0);
+
+
+        mouseUpDown -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 
 
         mouseUpDown = Mathf.Clamp(mouseUpDown, -mouseUpDownRange, mouseUpDownRange);
 
-       // Camera.main.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);\
-       */
+        Camera.main.transform.localRotation = Quaternion.Euler(mouseUpDown, 0, 0);
     }
 }
-
-//Bartek A. skrypt wzięty z poruszania się w forgotten
-//Staminę dodam później

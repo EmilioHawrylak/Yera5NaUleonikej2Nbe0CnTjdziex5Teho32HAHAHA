@@ -36,7 +36,7 @@ public class HouseDevelopment : MonoBehaviour
             case 2:
                 if (!BuildingCreated)
                 {
-                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 1.5f, HouseRG.position.y, HouseRG.position.z, HouseParent);
+                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 4f, HouseRG.position.y, HouseRG.position.z, HouseParent);
                 }
                 break;
         }
