@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         keyboard();
         mouse();
+        if (Input.GetKey(KeyCode.Q))
+            HD.OpenDevPanel();
     }
 
     private void keyboard()

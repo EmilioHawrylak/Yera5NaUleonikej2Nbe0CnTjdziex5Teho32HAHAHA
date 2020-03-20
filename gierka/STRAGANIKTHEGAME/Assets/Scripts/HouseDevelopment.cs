@@ -13,6 +13,7 @@ public class HouseDevelopment : MonoBehaviour
     public GameObject LevelUpButton;
     public GameObject Background;
     public GameObject Title;
+    public PlayerMovement Player;
     public bool canOpen;
     void Start()
     {
@@ -40,6 +41,10 @@ public class HouseDevelopment : MonoBehaviour
                 }
                 break;
         }
+        if (canOpen)
+            OpenDevelopmentPanel = true;
+        else
+            OpenDevelopmentPanel = false;
     }
 
     private void CreateAdditionalBuilding(GameObject Building, float PosX, float PosY, float PosZ, Transform Parent)
@@ -48,24 +53,20 @@ public class HouseDevelopment : MonoBehaviour
         BuildingCreated = true;
     }
 
-    private void OpenDevPanel()
+    public void OpenDevPanel()
     {
         if (OpenDevelopmentPanel)
         {
-            if (!canOpen)
-            {
-                LevelUpButton.SetActive(false);
-                Background.SetActive(false);
-                Title.SetActive(false);
-            }
-            else if (canOpen)
-            {
-                LevelUpButton.SetActive(true);
-                Background.SetActive(true);
-                Title.SetActive(true);
-            }
+            Background.SetActive(true);
+            LevelUpButton.SetActive(true);
+            Title.SetActive(true);
+            Player.enabled = false;
+        }else if (!OpenDevelopmentPanel){
+            Background.SetActive(false);
+            LevelUpButton.SetActive(false);
+            Title.SetActive(false);
+            Player.enabled = true;
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
