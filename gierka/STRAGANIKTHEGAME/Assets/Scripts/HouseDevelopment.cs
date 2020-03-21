@@ -10,10 +10,8 @@ public class HouseDevelopment : MonoBehaviour
     public Transform HouseParent;
     public Rigidbody HouseRG;
     public bool OpenDevelopmentPanel;
-    public GameObject LevelUpButton;
-    public GameObject Background;
-    public GameObject Title;
     public PlayerMovement Player;
+    public GameObject HDpanel;
     public bool canOpen;
     void Start()
     {
@@ -21,9 +19,7 @@ public class HouseDevelopment : MonoBehaviour
         BuildingCreated = false;
         OpenDevelopmentPanel = false;
         canOpen = false;
-        LevelUpButton.SetActive(false);
-        Background.SetActive(false);
-        Title.SetActive(false);
+        HDpanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,10 +37,21 @@ public class HouseDevelopment : MonoBehaviour
                 }
                 break;
         }
-        if (canOpen)
-            OpenDevelopmentPanel = true;
-        else
-            OpenDevelopmentPanel = false;
+
+        if (Input.GetKeyDown(KeyCode.Q) && canOpen)
+        {
+            Debug.Log("Q pressed");
+            if(HDpanel.activeInHierarchy == true)
+            {
+                HDpanel.SetActive(false);
+                Player.enabled = true;
+            }
+            else
+            {
+                HDpanel.SetActive(true);
+                Player.enabled = false;
+            }
+        }
     }
 
     private void CreateAdditionalBuilding(GameObject Building, float PosX, float PosY, float PosZ, Transform Parent)
@@ -53,20 +60,9 @@ public class HouseDevelopment : MonoBehaviour
         BuildingCreated = true;
     }
 
-    public void OpenDevPanel()
+    public void LevelUp()
     {
-        if (OpenDevelopmentPanel)
-        {
-            Background.SetActive(true);
-            LevelUpButton.SetActive(true);
-            Title.SetActive(true);
-            Player.enabled = false;
-        }else if (!OpenDevelopmentPanel){
-            Background.SetActive(false);
-            LevelUpButton.SetActive(false);
-            Title.SetActive(false);
-            Player.enabled = true;
-        }
+        HouseLevel += 1;
     }
 
     private void OnTriggerEnter(Collider other)
