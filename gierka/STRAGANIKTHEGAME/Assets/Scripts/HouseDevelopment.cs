@@ -10,9 +10,8 @@ public class HouseDevelopment : MonoBehaviour
     public Transform HouseParent;
     public Rigidbody HouseRG;
     public bool OpenDevelopmentPanel;
-    public GameObject LevelUpButton;
-    public GameObject Background;
-    public GameObject Title;
+    public PlayerMovement Player;
+    public GameObject HDpanel;
     public bool canOpen;
     void Start()
     {
@@ -20,9 +19,7 @@ public class HouseDevelopment : MonoBehaviour
         BuildingCreated = false;
         OpenDevelopmentPanel = false;
         canOpen = false;
-        LevelUpButton.SetActive(false);
-        Background.SetActive(false);
-        Title.SetActive(false);
+        HDpanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,9 +33,24 @@ public class HouseDevelopment : MonoBehaviour
             case 2:
                 if (!BuildingCreated)
                 {
-                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 1.5f, HouseRG.position.y, HouseRG.position.z, HouseParent);
+                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 4f, HouseRG.position.y, HouseRG.position.z, HouseParent);
                 }
                 break;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && canOpen)
+        {
+            Debug.Log("Q pressed");
+            if(HDpanel.activeInHierarchy == true)
+            {
+                HDpanel.SetActive(false);
+                Player.enabled = true;
+            }
+            else
+            {
+                HDpanel.SetActive(true);
+                Player.enabled = false;
+            }
         }
     }
 
@@ -48,24 +60,9 @@ public class HouseDevelopment : MonoBehaviour
         BuildingCreated = true;
     }
 
-    private void OpenDevPanel()
+    public void LevelUp()
     {
-        if (OpenDevelopmentPanel)
-        {
-            if (!canOpen)
-            {
-                LevelUpButton.SetActive(false);
-                Background.SetActive(false);
-                Title.SetActive(false);
-            }
-            else if (canOpen)
-            {
-                LevelUpButton.SetActive(true);
-                Background.SetActive(true);
-                Title.SetActive(true);
-            }
-        }
-        
+        HouseLevel += 1;
     }
 
     private void OnTriggerEnter(Collider other)
