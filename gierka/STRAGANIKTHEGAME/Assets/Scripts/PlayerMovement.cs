@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public float mouseUpDown = 0.0f;
     public float mouseUpDownRange = 90.0f;
 
+    HouseDevelopment HD;
+
     private void Start()
     {
         characterControler = GetComponent<CharacterController>();

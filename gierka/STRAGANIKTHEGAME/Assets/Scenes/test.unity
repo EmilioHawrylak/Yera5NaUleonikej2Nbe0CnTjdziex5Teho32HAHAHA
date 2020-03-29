@@ -2292,6 +2292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterControler: {fileID: 1203275469}
+  cam: {fileID: 429775749}
+  inventory: {fileID: 1773360342}
   movementSpeed: 6
   jumpHeight: 10
   currentJumpHeight: 0
@@ -2299,6 +2301,7 @@ MonoBehaviour:
   mouseSensitivity: 3
   mouseUpDown: 0
   mouseUpDownRange: 90
+  test: 0
 --- !u!143 &1203275469
 CharacterController:
   m_ObjectHideFlags: 0
