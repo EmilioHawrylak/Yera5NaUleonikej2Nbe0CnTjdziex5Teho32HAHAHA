@@ -9,14 +9,20 @@ public class DoorScript : MonoBehaviour
     public bool close;
     public bool inTrigger;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collision)
     {
-        inTrigger = true;
+        if (collision.gameObject.name == "Player")
+        {
+            inTrigger = true;
+        }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider collision)
     {
-        inTrigger = false;
+        if (collision.gameObject.name == "Player")
+        {
+            inTrigger = false;
+        }
     }
 
     void Update()
