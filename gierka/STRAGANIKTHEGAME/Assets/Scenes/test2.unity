@@ -273,7 +273,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 396018592}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1934910208}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7695b9ed6b45e04eb4ec23e9f53104d, type: 3}
@@ -463,6 +463,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666575994884376081, guid: f5ef6720ba064354987e2d13f65d02a8,
+        type: 3}
+      propertyPath: Stats
+      value: 
+      objectReference: {fileID: 1934910214}
+    - target: {fileID: 4666575994884376081, guid: f5ef6720ba064354987e2d13f65d02a8,
+        type: 3}
+      propertyPath: runningSpeed
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4666575994884376082, guid: f5ef6720ba064354987e2d13f65d02a8,
         type: 3}
@@ -1118,6 +1128,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1934910208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4666575994884376079, guid: f5ef6720ba064354987e2d13f65d02a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 396018592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1934910214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934910208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75afd59cd743f0549a3f1850b7381857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthPoints: 0
+  Hunger: 0
+  Stamina: 0
+  Thirst: 0
+  Sprint: 0
 --- !u!1001 &650612919940709402
 PrefabInstance:
   m_ObjectHideFlags: 0

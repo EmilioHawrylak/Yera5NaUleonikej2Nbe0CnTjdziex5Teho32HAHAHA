@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController characterControler;
-    public float movementSpeed = 9.0f;
+    public float movementSpeed = 7.0f;
     public float jumpHeight = 7.0f;
     public float currentJumpHeight = 0f;
-    public float runningSpeed = 7.0f;
+    public float runningSpeed = 14.0f;
 
     public float mouseSensitivity = 3.0f;
     public float mouseUpDown = 0.0f;
     public float mouseUpDownRange = 90.0f;
+
+    public PlayerStats Stats;
 
     private void Start()
     {
@@ -49,13 +51,15 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey("left shift"))
+        if (Input.GetKey("left shift") && Stats.Stamina > 1.0)
         {
             movementSpeed = runningSpeed;
+            Stats.Sprint = true;
         }
         else
         {
-            movementSpeed = 9.0f;
+            movementSpeed = 7.0f;
+            Stats.Sprint = false;
         }
 
         Vector3 movement = new Vector3(movementLeftRight, currentJumpHeight, movementFrontBack);
