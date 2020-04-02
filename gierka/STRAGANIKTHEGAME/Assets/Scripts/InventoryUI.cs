@@ -8,12 +8,13 @@ public class InventoryUI : MonoBehaviour
     static public InventorySlot[] Items;
     static private int ile_obiektow = 0;
     static public bool full = false;
+    static public bool active = false; 
     void Start()
     {
         Items = GetComponentsInChildren<InventorySlot>();
         ile_obiektow = Items.Length;
         Debug.Log(ile_obiektow);
-        Inventory_panel.SetActive(false);
+        Inventory_panel.SetActive(active);
     }
     public static void Equip(GameObject Object_to_equip)// algorytm na dodawanie obiektow
     {

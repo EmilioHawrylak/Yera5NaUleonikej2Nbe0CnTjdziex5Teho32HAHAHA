@@ -23,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        keyboard();
-        mouse();
+        if (InventoryUI.active == false)
+        {
+            keyboard();
+            mouse();
+        }
             
     }
 
