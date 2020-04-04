@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HouseDevelopment : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class HouseDevelopment : MonoBehaviour
     public PlayerMovement Player;
     public GameObject HDpanel;
     public bool canOpen;
+    public Text canUpgrade;
+    public Text XPShow;
+    public PlayerStats Stats;
+  
     void Start()
     {
         HouseLevel = 1;
@@ -31,7 +36,7 @@ public class HouseDevelopment : MonoBehaviour
                 break;
 
             case 2:
-                if (!BuildingCreated)
+                if (!BuildingCreated && Stats.XP >= 10)
                 {
                     CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 4f, HouseRG.position.y, HouseRG.position.z, HouseParent);
                 }
@@ -52,6 +57,12 @@ public class HouseDevelopment : MonoBehaviour
                 Player.enabled = false;
             }
         }
+        if (Stats.XP >= 10)
+            canUpgrade.text = "You can upgrade your house!";
+        else
+            canUpgrade.text = "Not enough XP to upgrade your house";
+
+        XPShow.text = "XP : " + Stats.XP.ToString();
     }
 
     private void CreateAdditionalBuilding(GameObject Building, float PosX, float PosY, float PosZ, Transform Parent)

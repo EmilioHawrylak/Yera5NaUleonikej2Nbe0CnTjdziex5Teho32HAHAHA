@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public float HealthPoints, Hunger, Stamina, Thirst;
+    public int XP;
     public bool Sprint;
 
     void Start()
@@ -13,6 +14,7 @@ public class PlayerStats : MonoBehaviour
         Hunger = 100;
         Stamina = 100;
         Thirst = 100;
+        XP = 10;
     }
 
     void Update()
