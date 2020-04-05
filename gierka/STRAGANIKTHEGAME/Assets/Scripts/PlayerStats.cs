@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
         Hunger = 100;
         Stamina = 100;
         Thirst = 100;
-        XP = 10;
+        XP = 20;
     }
 
     void Update()
