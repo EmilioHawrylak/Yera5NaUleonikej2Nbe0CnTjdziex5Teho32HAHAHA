@@ -57,7 +57,7 @@ public class HouseDevelopment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && canOpen)
         {
             Debug.Log("Q pressed");
-            if(HDpanel.activeInHierarchy == true)
+            if(HDpanel.activeInHierarchy)
             {
                 HDpanel.SetActive(false);
                 Player.enabled = true;
