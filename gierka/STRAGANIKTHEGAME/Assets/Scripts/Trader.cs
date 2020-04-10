@@ -9,6 +9,7 @@ public class Trader : MonoBehaviour
     public GameObject TraderPanel;
     public PlayerMovement Player;
     public Text Money;
+    public TradingItem Item;
     public bool canOpen;
 
     void Start()
@@ -50,6 +51,15 @@ public class Trader : MonoBehaviour
         if(other.name == "Player")
         {
             canOpen = false;
+        }
+    }
+
+    public void Sell()
+    {
+        if (Stats.Money >= Item.Price)
+        {
+            Stats.Money -= Item.Price;
+            Item.Item.SetActive(false);
         }
     }
 }

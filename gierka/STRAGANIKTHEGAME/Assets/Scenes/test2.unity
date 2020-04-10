@@ -177,6 +177,7 @@ MonoBehaviour:
   ItemIcon: {fileID: 973443971}
   ItemName: Bottle
   Price: 6
+  Item: {fileID: 33201931}
   Description: {fileID: 868900549}
 --- !u!114 &33201934
 MonoBehaviour:
@@ -799,6 +800,7 @@ MonoBehaviour:
   TraderPanel: {fileID: 44752096}
   Player: {fileID: 141654547}
   Money: {fileID: 448291653}
+  Item: {fileID: 33201933}
   canOpen: 0
 --- !u!1 &425530334
 GameObject:
@@ -1955,7 +1957,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2071516530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 346585257}
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2071516530
 MonoBehaviour:
   m_ObjectHideFlags: 0

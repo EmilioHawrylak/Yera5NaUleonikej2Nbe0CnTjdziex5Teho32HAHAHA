@@ -8,6 +8,7 @@ public class TradingItem : MonoBehaviour
     public Image ItemIcon;
     public string ItemName;
     public float Price;
+    public GameObject Item;
     public Text Description;
 
     void Start()
