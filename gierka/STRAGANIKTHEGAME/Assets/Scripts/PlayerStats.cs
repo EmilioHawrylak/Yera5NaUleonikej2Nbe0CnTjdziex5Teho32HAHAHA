@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float HealthPoints, Hunger, Stamina, Thirst;
+    public float HealthPoints, Hunger, Stamina, Thirst, Money;
     public int XP;
     public bool Sprint;
 
@@ -14,7 +14,8 @@ public class PlayerStats : MonoBehaviour
         Hunger = 100;
         Stamina = 100;
         Thirst = 100;
-        XP = 10;
+        XP = 20;
+        Money = 100;
     }
 
     void Update()
