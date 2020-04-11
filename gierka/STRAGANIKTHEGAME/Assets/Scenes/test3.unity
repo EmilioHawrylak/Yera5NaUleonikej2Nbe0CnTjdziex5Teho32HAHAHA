@@ -319,6 +319,7 @@ MonoBehaviour:
   mouseSensitivity: 3
   mouseUpDown: 0
   mouseUpDownRange: 90
+  Stats: {fileID: 0}
 --- !u!136 &348785994
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -412,31 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec03a71ea0bf77409a4dff398dad809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  YouDiedImage: {fileID: 0}
-  RestartGameButton: {fileID: 0}
-  MainMenuButton: {fileID: 0}
-  Player: {fileID: 0}
-  Died: 0
-  FoodTimer: 0
-  HealthTimer: 0
-  EnergyTimer: 0
-  HungerDamageTimer: 0
-  MaxHealth: 0
-  MaxEnergy: 0
-  FullHunger: 0
-  FullThirst: 0
-  Health: 0
-  Energy: 0
-  Hunger: 0
-  Thirst: 0
-  Attack: 0
-  Defense: 0
-  Vitality: 0
-  Stamina: 0
-  HungerResistance: 0
-  JumpHeight: 0
-  Speed: 0
-  Sprint: 0
 --- !u!1 &364271414
 GameObject:
   m_ObjectHideFlags: 0

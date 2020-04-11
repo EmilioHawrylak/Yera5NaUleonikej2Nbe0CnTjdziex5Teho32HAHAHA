@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/test3.unity
     guid: df535047134ded646867e22318636c56
   - enabled: 1
-    path: Assets/Scenes/FirstScene.unity
+    path: Assets/Scenes/cos.unity
     guid: ceb90716ca445cd4e8544a477342f9e3
   m_configObjects: {}

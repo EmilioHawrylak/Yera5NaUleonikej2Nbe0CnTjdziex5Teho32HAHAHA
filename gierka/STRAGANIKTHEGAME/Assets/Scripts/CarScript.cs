@@ -17,7 +17,7 @@ public class CarScript : MonoBehaviour
 
     void Start()
     {
-        isInterior = false;
+        isInterior = true;
     }
     void Update()
     {
@@ -48,5 +48,6 @@ public class CarScript : MonoBehaviour
             isInterior = !isInterior;
         }
         Debug.Log(FR.steerAngle);
+        Debug.Log(RR.rpm);
     }
 }

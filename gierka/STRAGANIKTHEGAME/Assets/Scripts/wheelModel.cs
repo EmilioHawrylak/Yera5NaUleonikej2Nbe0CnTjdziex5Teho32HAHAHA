@@ -18,6 +18,7 @@ public class wheelModel : MonoBehaviour
         {
             orientation = -1;
         }
+        wheelC.ConfigureVehicleSubsteps(5f, 24, 30);
     }
     void FixedUpdate()
     {
