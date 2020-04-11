@@ -296,12 +296,12 @@ MonoBehaviour:
   HouseParent: {fileID: 125185266}
   HouseRG: {fileID: 125185267}
   OpenDevelopmentPanel: 0
-  Player: {fileID: 141654547}
+  Player: {fileID: 0}
   HDpanel: {fileID: 818226627}
   canOpen: 0
   canUpgrade: {fileID: 2124794878}
   XPShow: {fileID: 2082689370}
-  Stats: {fileID: 259991052}
+  Stats: {fileID: 0}
 --- !u!65 &125185263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -405,18 +405,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0175452, y: 1, z: 3.1719322}
   m_Center: {x: 0.29745612, y: 0, z: 0.29443932}
---- !u!114 &141654547 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8896893753962583137, guid: f5ef6720ba064354987e2d13f65d02a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8896893754093710962}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7695b9ed6b45e04eb4ec23e9f53104d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &154653842
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &212949096
 GameObject:
@@ -663,18 +651,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &259991052 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8896893753847041396, guid: f5ef6720ba064354987e2d13f65d02a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8896893754093710962}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75afd59cd743f0549a3f1850b7381857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &346585251
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,9 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee5724775191fb48a7a568b569c4ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stats: {fileID: 259991052}
+  Stats: {fileID: 0}
   TraderPanel: {fileID: 44752096}
-  Player: {fileID: 141654547}
+  Player: {fileID: 0}
   Money: {fileID: 448291653}
   Item: {fileID: 33201933}
   canOpen: 0
@@ -2235,6 +2211,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5134793639119266515, guid: f5ef6720ba064354987e2d13f65d02a8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5519834032903148969, guid: f5ef6720ba064354987e2d13f65d02a8,
         type: 3}
       propertyPath: m_LocalPosition.x

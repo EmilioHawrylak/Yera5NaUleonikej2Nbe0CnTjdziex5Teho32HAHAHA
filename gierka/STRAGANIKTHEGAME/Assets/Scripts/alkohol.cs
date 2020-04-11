@@ -17,7 +17,7 @@ public class alkohol : MonoBehaviour
         if (collision.gameObject.name == "Beer")
         {
             inTrigger = true;
-            
+            OnGUI();
             Debug.Log("Pijesz");
         }
         if (collision.gameObject.name == "Wodka")
