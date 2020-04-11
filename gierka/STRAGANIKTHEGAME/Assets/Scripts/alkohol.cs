@@ -5,6 +5,7 @@ using UnityEngine;
 public class alkohol : MonoBehaviour
 {
     public bool inTrigger;
+    public bool drunk=false;
 
     void Update()
     {
@@ -16,6 +17,7 @@ public class alkohol : MonoBehaviour
         if (collision.gameObject.name == "Beer")
         {
             inTrigger = true;
+            
             Debug.Log("Pijesz");
         }
         if (collision.gameObject.name == "Wodka")
@@ -39,6 +41,8 @@ public class alkohol : MonoBehaviour
     {
         inTrigger = false;
     }
+
+
     void OnGUI()
     {
         if (inTrigger)
