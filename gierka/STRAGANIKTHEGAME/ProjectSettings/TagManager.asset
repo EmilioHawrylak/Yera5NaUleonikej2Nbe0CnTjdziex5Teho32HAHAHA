@@ -7,7 +7,7 @@ TagManager:
   - Item
   - right
   - left
-  - Trader
+  - Chest
   layers:
   - Default
   - TransparentFX

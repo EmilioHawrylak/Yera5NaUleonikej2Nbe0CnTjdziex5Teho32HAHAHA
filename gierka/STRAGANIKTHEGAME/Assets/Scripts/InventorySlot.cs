@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour
        if (Item != null)// jesli slot nie jest pusty 
         {
             sprite.SetActive(false);// wylacz podglad
-            Item.transform.position = pick_up.Hand_position;// pozycja reki gracza ustaw tam aby wyrzucic
+            Item.transform.position = Interact.Hand_position;// pozycja reki gracza ustaw tam aby wyrzucic
             Item.SetActive(true);//na mapie 
             Item = null;//wyzeruj slot
             InventoryUI.full = false;// ekwipunek nie jest pelny
