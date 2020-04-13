@@ -19,7 +19,6 @@ public class HouseDevelopment : MonoBehaviour
     public Text canUpgrade;
     public Text XPShow;
     public PlayerStats Stats;
-    public Button LevelUpButton;
   
     void Start()
     {
@@ -48,7 +47,7 @@ public class HouseDevelopment : MonoBehaviour
             case 3:
                 if (!Building2Created && Stats.XP >= 20)
                 {
-                    CreateAdditionalBuilding(AdditionalBuilding2, HouseRG.position.x, HouseRG.position.y + 3f, HouseRG.position.z, HouseParent);
+                    CreateAdditionalBuilding(AdditionalBuilding2, HouseRG.position.x, HouseRG.position.y + 2.5f, HouseRG.position.z, HouseParent);
                     Building2Created = true;
                 }
                 break;
@@ -75,8 +74,6 @@ public class HouseDevelopment : MonoBehaviour
             canUpgrade.text = "Not enough XP to upgrade your house";
 
         XPShow.text = "XP : " + Stats.XP.ToString();
-
-        LevelUpButton.onClick.AddListener(LevelUp);
     }
 
     private void CreateAdditionalBuilding(GameObject Building, float PosX, float PosY, float PosZ, Transform Parent)
