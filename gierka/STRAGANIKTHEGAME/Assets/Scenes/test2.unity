@@ -296,12 +296,12 @@ MonoBehaviour:
   HouseParent: {fileID: 125185266}
   HouseRG: {fileID: 125185267}
   OpenDevelopmentPanel: 0
-  Player: {fileID: 0}
+  Player: {fileID: 670585945}
   HDpanel: {fileID: 818226627}
   canOpen: 0
   canUpgrade: {fileID: 2124794878}
   XPShow: {fileID: 2082689370}
-  Stats: {fileID: 0}
+  Stats: {fileID: 670585943}
 --- !u!65 &125185263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -772,9 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee5724775191fb48a7a568b569c4ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stats: {fileID: 0}
+  Stats: {fileID: 670585943}
   TraderPanel: {fileID: 44752096}
-  Player: {fileID: 0}
+  Player: {fileID: 670585945}
   Money: {fileID: 448291653}
   Item: {fileID: 33201933}
   canOpen: 0
@@ -1024,6 +1024,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &670585943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5708751502708047807, guid: f5ef6720ba064354987e2d13f65d02a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8896893754093710962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75afd59cd743f0549a3f1850b7381857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &670585945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2502594407908950367, guid: f5ef6720ba064354987e2d13f65d02a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8896893754093710962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7695b9ed6b45e04eb4ec23e9f53104d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &754252817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1903,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071516527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 24}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425530335}

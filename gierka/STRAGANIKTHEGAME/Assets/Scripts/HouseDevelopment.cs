@@ -40,14 +40,14 @@ public class HouseDevelopment : MonoBehaviour
             case 2:
                 if (!BuildingCreated && Stats.XP >= 10)
                 {
-                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 4f, HouseRG.position.y, HouseRG.position.z, HouseParent);
+                    CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 2.8f, HouseRG.position.y + 2f, HouseRG.position.z - 1f, HouseParent);
                     BuildingCreated = true;
                 }
                 break;
             case 3:
                 if (!Building2Created && Stats.XP >= 20)
                 {
-                    CreateAdditionalBuilding(AdditionalBuilding2, HouseRG.position.x, HouseRG.position.y + 2f, HouseRG.position.z, HouseParent);
+                    CreateAdditionalBuilding(AdditionalBuilding2, HouseRG.position.x, HouseRG.position.y + 2.5f, HouseRG.position.z, HouseParent);
                     Building2Created = true;
                 }
                 break;
