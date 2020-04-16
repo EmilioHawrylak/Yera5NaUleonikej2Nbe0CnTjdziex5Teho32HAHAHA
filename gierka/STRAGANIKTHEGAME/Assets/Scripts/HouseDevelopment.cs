@@ -12,19 +12,18 @@ public class HouseDevelopment : MonoBehaviour
     private bool Building2Created;
     public Transform HouseParent;
     public Rigidbody HouseRG;
-    public bool OpenDevelopmentPanel;
     public PlayerMovement Player;
     public GameObject HDpanel;
     public bool canOpen;
     public Text canUpgrade;
     public Text XPShow;
     public PlayerStats Stats;
+    public int XPNeeded;
   
     void Start()
     {
         HouseLevel = 1;
         BuildingCreated = false;
-        OpenDevelopmentPanel = false;
         canOpen = false;
         HDpanel.SetActive(false);
     }
@@ -35,21 +34,24 @@ public class HouseDevelopment : MonoBehaviour
         switch (HouseLevel)
         {
             case 1:
+                XPNeeded = 10;
                 break;
 
             case 2:
-                if (!BuildingCreated && Stats.XP >= 10)
+                if (!BuildingCreated && Stats.XP >= XPNeeded)
                 {
                     CreateAdditionalBuilding(AdditionalBuilding, HouseRG.position.x + 2.8f, HouseRG.position.y + 2f, HouseRG.position.z - 1f, HouseParent);
                     BuildingCreated = true;
                 }
+                XPNeeded = 20;
                 break;
             case 3:
-                if (!Building2Created && Stats.XP >= 20)
+                if (!Building2Created && Stats.XP >= XPNeeded)
                 {
                     CreateAdditionalBuilding(AdditionalBuilding2, HouseRG.position.x, HouseRG.position.y + 2.5f, HouseRG.position.z, HouseParent);
                     Building2Created = true;
                 }
+                XPNeeded = 30;
                 break;
                    
         }
@@ -68,7 +70,7 @@ public class HouseDevelopment : MonoBehaviour
                 Player.enabled = false;
             }
         }
-        if (Stats.XP >= 10)
+        if (Stats.XP >= XPNeeded)
             canUpgrade.text = "You can upgrade your house!";
         else
             canUpgrade.text = "Not enough XP to upgrade your house";
