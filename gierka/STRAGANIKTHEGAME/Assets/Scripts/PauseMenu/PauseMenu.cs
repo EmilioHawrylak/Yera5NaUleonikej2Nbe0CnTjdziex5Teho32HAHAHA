@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
-
+    public PlayerMovement Player;
     [SerializeField] private bool isPaused;
 
     private void Update()
@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
-        
+        Player.enabled = false;
     }
 
     public void DeactiveMenu()
@@ -39,5 +39,6 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         isPaused = false;
+        Player.enabled = true;
     }
 }
