@@ -102,4 +102,12 @@ public class HouseDevelopment : MonoBehaviour
             canOpen = false;
         }
     }
+
+    private void OnGUI()
+    {
+        if (canOpen && !HDpanel.activeInHierarchy)
+        {
+            GUI.Box(new Rect(100, 100, 180, 30), "Press Q to open panel");
+        }
+    }
 }
