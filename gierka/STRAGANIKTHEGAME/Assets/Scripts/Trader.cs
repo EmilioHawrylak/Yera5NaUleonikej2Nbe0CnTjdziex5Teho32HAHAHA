@@ -56,9 +56,9 @@ public class Trader : MonoBehaviour
 
     public void Sell()
     {
-        if (Stats.Money >= Item.Price)
+        if (Stats.Money >= Item.Cost)
         {
-            Stats.Money -= Item.Price;
+            Stats.Money -= Item.Cost;
             Item.Item.SetActive(false);
         }
     }

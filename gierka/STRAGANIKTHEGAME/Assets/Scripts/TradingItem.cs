@@ -7,7 +7,7 @@ public class TradingItem : MonoBehaviour
 {
     public Image ItemIcon;
     public string ItemName;
-    public float Price;
+    public float Cost;
     public GameObject Item;
     public Text Description;
 
@@ -18,6 +18,6 @@ public class TradingItem : MonoBehaviour
 
     void Update()
     {
-        Description.text = ItemName + "\n" + Price.ToString() + "$";   
+        Description.text = ItemName + "\n" + Cost.ToString() + "$";   
     }
 }
