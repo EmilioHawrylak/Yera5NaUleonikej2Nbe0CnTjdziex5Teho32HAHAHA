@@ -6,40 +6,52 @@ public class alkohol : MonoBehaviour
 {
     public bool inTrigger;
     public bool drunk=false;
+    //czasy
+    public float drunkTime = 0.0f;
+    public float BeerTime = 2.0f;
+
+    //zmienne do alko
+    public bool beerTrigger =false;
+    public bool wodkaTrigger = false;
+    public bool whiskyTrigger = false;
+    //blic bool beerTrigger = false;
+
 
     void Update()
     {
+        if (beerTrigger)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                drunkTime = drunkTime + BeerTime - Time.deltaTime;
+            }
+        }
+        Debug.Log(drunkTime);
         
     }
 
-    void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
+        
+        if (collision.gameObject.name == "Beer") 
+        {
+            beerTrigger = true;         
+        }
         if (collision.gameObject.name == "Beer")
         {
-            inTrigger = true;
-            OnGUI();
-            Debug.Log("Pijesz");
+            wodkaTrigger = true;
         }
-        if (collision.gameObject.name == "Wodka")
+        if (collision.gameObject.name == "Beer")
         {
-            inTrigger = true;
-            Debug.Log("Pijesz");
+            whiskyTrigger = true;
         }
-        if (collision.gameObject.name == "Whisky")
-        {
-            inTrigger = true;
-            Debug.Log("Pijesz");
-        }
-        if (collision.gameObject.name == "Spirytuss")
-        {
-            inTrigger = true;
-            Debug.Log("Pijesz");
-        }
-       
+
     }
     void OnTriggerExit(Collider collision)
     {
-        inTrigger = false;
+        beerTrigger = false;
+        wodkaTrigger = false;
+        whiskyTrigger = false;
     }
 
 
@@ -50,4 +62,6 @@ public class alkohol : MonoBehaviour
             GUI.Box(new Rect(700, 450, 200, 25), "Press E to drink");
         }
     }
+
+    
 }
