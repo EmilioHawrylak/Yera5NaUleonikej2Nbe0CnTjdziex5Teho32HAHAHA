@@ -55,6 +55,8 @@ public class Interact : MonoBehaviour
             in_storage = true;
             able_to_open_storage = false;
         }
+
+
         /************************************************************************/
         Equipment_is_full_wait();// jesli ekwipunek pelen to wyswietl tekst i po 3 sekundach go wylacz 
         /*************************************************************************/// jesli pelen
@@ -91,4 +93,5 @@ public class Interact : MonoBehaviour
             launch_inv.SetActive(false);
         }
     }
+
 }

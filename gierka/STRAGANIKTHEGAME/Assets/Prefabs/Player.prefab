@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2502594407908950367}
   - component: {fileID: 8913175025603502091}
   - component: {fileID: 5708751502708047807}
+  - component: {fileID: 278902880799788312}
   - component: {fileID: 9019065294317071659}
   - component: {fileID: 9019065294317071658}
   m_Layer: 0
@@ -241,6 +242,21 @@ MonoBehaviour:
   Money: 0
   XP: 0
   Sprint: 0
+--- !u!114 &278902880799788312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019065294317071651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654176a1888078e4791f2c76b826c510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  insideCar: 0
 --- !u!114 &9019065294317071659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,3 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inTrigger: 0
   drunk: 0
+  drunkTime: 0
+  BeerTime: 2
+  beerTrigger: 0
+  wodkaTrigger: 0
+  whiskyTrigger: 0
