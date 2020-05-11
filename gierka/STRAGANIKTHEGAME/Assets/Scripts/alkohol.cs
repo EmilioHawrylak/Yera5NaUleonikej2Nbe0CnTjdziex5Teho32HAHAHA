@@ -26,7 +26,7 @@ public class alkohol : MonoBehaviour
                 drunkTime = drunkTime + BeerTime - Time.deltaTime;
             }
         }
-        Debug.Log(drunkTime);
+        
         
     }
 
