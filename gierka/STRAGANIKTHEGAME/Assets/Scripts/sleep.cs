@@ -5,27 +5,39 @@ using UnityEngine;
 public class sleep : MonoBehaviour
 {
     public GameObject sun;
-    public bool InTrigger=false;
+    public GameObject defeaultSunPos;
+    public bool inTrigger=false;
     void Start()
     {
         
     }
 
-    
-    void Update()
+
+    void OnTriggerEnter(Collider collision)
     {
-        if (InTrigger)
+        if (collision.gameObject.name == "Player")
         {
-            sun.transform.Rotate(2.15473f, 5.799893f, -4.843276f);
-            Debug.Log("Sun rotate");
+            inTrigger = true;
         }
     }
-    private void OnTriggerEnter(Collider collision)
+
+    void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.name == "player")
+        if (collision.gameObject.name == "Player")
         {
-            InTrigger = true;
+            inTrigger = false;
         }
-        
+    }
+
+    void Update()
+    {
+        if (inTrigger)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                sun.transform.rotation = defeaultSunPos.transform.rotation;
+                Debug.Log("sleep");
+            }
+        }
     }
 }

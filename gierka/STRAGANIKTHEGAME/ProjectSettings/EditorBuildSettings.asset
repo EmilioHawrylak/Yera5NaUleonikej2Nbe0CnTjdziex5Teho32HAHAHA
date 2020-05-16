@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cos.unity
     guid: ceb90716ca445cd4e8544a477342f9e3
+  - enabled: 1
+    path: Assets/Scenes/GraphicsOptions.unity
+    guid: bbdf8e51fe5a48e45be6a0a1ceaecdef
   m_configObjects: {}
