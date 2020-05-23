@@ -1,60 +1,84 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class alkohol : MonoBehaviour
 {
-    public bool inTrigger;
-    public bool drunk=false;
-    //czasy
-    public float drunkTime = 0.0f;
-    public float BeerTime = 2.0f;
+    public bool InTrigger=false;
+    public  float drunkTimer = 0;
+    public float beerTimer = 35;
+    public float wodkaTimer = 120;
+    public float whiskyTimer = 360;
 
-    //zmienne do alko
-    public bool beerTrigger =false;
-    public bool wodkaTrigger = false;
-    public bool whiskyTrigger = false;
-    //blic bool beerTrigger = false;
+    bool InTriggerBeer = false;
+    bool InTriggerWodka = false;
+    bool InTriggerWhisky = false;
 
-
+    void Start()
+    {
+        
+    }
     void Update()
     {
-        if (beerTrigger)
+        alkohole();
+
+        drunkTimer -= Time.deltaTime;
+        Debug.Log(drunkTimer);
+        while (drunkTimer < 0)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                drunkTime = drunkTime + BeerTime - Time.deltaTime;
-            }
+            drunkTimer = 0;
         }
-        
+            
         
     }
-
     private void OnTriggerEnter(Collider collision)
     {
-        
-        if (collision.gameObject.name == "Beer") 
-        {
-            beerTrigger = true;         
-        }
         if (collision.gameObject.name == "Beer")
         {
-            wodkaTrigger = true;
+            InTriggerBeer = true;
         }
-        if (collision.gameObject.name == "Beer")
+        if (collision.gameObject.name == "Wodka")
         {
-            whiskyTrigger = true;
+            InTriggerBeer = true;
         }
-
+        if (collision.gameObject.name == "Whisky")
+        {
+            InTriggerBeer = true;
+        }
     }
-    void OnTriggerExit(Collider collision)
+    public void alkohole()
     {
-        beerTrigger = false;
-        wodkaTrigger = false;
-        whiskyTrigger = false;
+        if (InTriggerBeer)
+        {
+            {
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    drunkTimer = drunkTimer + beerTimer;
+                }
+            }
+        }
+        if (InTriggerWodka)
+        {
+            {
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    drunkTimer = drunkTimer + wodkaTimer;
+                }
+            }
+        }
+        if (InTriggerWhisky)
+        {
+            {
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    drunkTimer = drunkTimer + whiskyTimer;
+                }
+            }
+        }
     }
 
-
+    /*
     void OnGUI()
     {
         if (inTrigger)
@@ -63,5 +87,5 @@ public class alkohol : MonoBehaviour
         }
     }
 
-    
+    */
 }

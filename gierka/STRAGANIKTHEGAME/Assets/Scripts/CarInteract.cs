@@ -7,6 +7,7 @@ public class CarInteract : MonoBehaviour
     public GameObject car;
     public Vector3 offset;
     public bool insideCar;
+    
 
     void Start()
     {
@@ -15,19 +16,22 @@ public class CarInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) /*&& Vector3.Distance(transform.position, car.transform.position) < 100*/)
-        {
-            insideCar = !insideCar;
-        }
-        if(insideCar)
-        {
-            inCar();
-        }
-        else
-        {
-            outCar();
-        }
+        
+            if (Input.GetKeyDown(KeyCode.F) /*&& Vector3.Distance(transform.position, car.transform.position) < 100*/)
+            {
+                insideCar = !insideCar;
+            }
+            if (insideCar)
+            {
+                inCar();
+            }
+            else
+            {
+                outCar();
+            }
+        
     }
+    
 
     private void inCar()
     {
