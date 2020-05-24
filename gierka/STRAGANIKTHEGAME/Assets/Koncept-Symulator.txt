@@ -1,0 +1,72 @@
+House simulator
+
+Data: 23.05.2020
+Ostatnia Edycja: 24.05.2020 19.12
+
+Styl graficzny: Inspiracja 
+https://www.youtube.com/watch?v=5lUaEY1hCj8
+
+Pomys³:
+House simulator jest to symulator rozwijania biznesu i rozbudowywania domu. W grze mamy dostêp do ró¿nych modeli aut, 
+ró¿nych wariantów rozbudowy domu i ró¿nych pomys³ów na biznes
+
+Menu:
+-Panel
+ -Gra
+  -Wczytaj grê
+  -Nowa gra
+  -usuñ postêpy
+ -ustawienia
+  -grafika
+  -dzwiêk
+  -ogólne
+ -autorzy
+ -wyjœcie
+
+Menu pauzy:
+-Panel
+ -Wznów grê
+ -ustawienia
+  -grafika
+  -dzwiêk
+  -ogólne
+   -rodzielczoœæ
+   -
+ -wczytaj grê
+ -zapisz grê
+ -podpowiedzi do rozgrywki
+ -wyjœcie 
+  -do menu
+  -do pulpitu
+
+Mechaniki:
+Jazda autem - s³u¿¹ca do przemieszczania siê miêdzy straganem a domem szybciej ni¿ na piechotê, mo¿na za pomoc¹ auta wzi¹æ wiêcej przedmiotów ze sob¹
+
+Rozbudowa domu- mechanika pozwalaj¹ca na dostosowywanie swojego domu pod swoje potrzeby, mo¿na wytwarzaæ np. bimber po zakupie ulepszenia, a nastêpnie go sprzedawaæ
+mo¿e pos³u¿yæ do z³agodzenia ekonomii gry
+
+³owienie ryb - mo¿na ³owiæ ryby a nastêpnie je sprzedawaæ aby zwiêkszyæ zysk albo osi¹gn¹æ pierwszy zarobek (podstawowa opcja zarabiania)
+
+Czarny rynek - mo¿na sprzedawaæ na czarnym rynku ró¿ne substancje niemozliwe do sprzedania na targowisku
+
+Gara¿ - w zale¿noœci jak bardzo mamy rozbudowany gara¿, tak bardzo zaawansowany samochód mo¿emy posiadaæ
+
+picie alkoholu - mo¿na kupiæ wódke, spirytus, piwo, wino, whisky na targowisku, mo¿na wypiæ lecz ka¿dy spo¿yty trunek ma inne efekty i zale¿ne s¹ od iloœci
+
+
+
+Umiejêtnoœci:
+Si³a - wp³ywa na iloœæ maksymaln¹ przedmiotów w ekwipunku
+
+kondycja - wp³ywa na prêdkoœæ chodzenia/biegu i na czas trwania chodzenia/biegu
+
+charyzma - wp³ywa na ceny sprzeda¿y/kupna
+
+prowadzenia - wy¿sze poziomy aut mo¿na posiadaæ tylko z wskazanym poziomem jazdy autem
+
+pêdzenie bimbru - odblokowane do rozwijania dopiero po zakupie specjalnego ulepszenia domu, wp³ywa na iloœæ pozyskiwanego bimbru
+
+
+
+
+
