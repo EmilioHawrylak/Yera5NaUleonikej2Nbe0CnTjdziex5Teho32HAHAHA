@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    https://trello.com/b/tiKS1psr/giera-1
+    private void Start()
+    {
+        
+    }
 }
