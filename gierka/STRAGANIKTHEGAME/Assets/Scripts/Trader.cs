@@ -60,6 +60,7 @@ public class Trader : MonoBehaviour
         {
             Stats.Money -= Item.Cost;
             Item.Item.SetActive(false);
+            InventoryUI.Equip(Item.Item);   
         }
     }
 }
