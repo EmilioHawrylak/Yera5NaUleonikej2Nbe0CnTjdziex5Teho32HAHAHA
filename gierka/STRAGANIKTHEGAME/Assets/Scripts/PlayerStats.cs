@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
         HungerGrowth();
         ThirstGrowth();
         StaminaFalling();
+        StaminaGrowth();
         if (Input.GetKeyDown(KeyCode.X))
         {
             addXP(50);
@@ -48,6 +49,14 @@ public class PlayerStats : MonoBehaviour
         if (Sprint)
         {
             Stamina -= Time.deltaTime * 2;
+        }
+    }
+
+    public void StaminaGrowth()
+    {
+        if (!Sprint && Stamina <= 100)
+        {
+            Stamina += Time.deltaTime * 2;
         }
     }
     public void addXP(int xpquantity)

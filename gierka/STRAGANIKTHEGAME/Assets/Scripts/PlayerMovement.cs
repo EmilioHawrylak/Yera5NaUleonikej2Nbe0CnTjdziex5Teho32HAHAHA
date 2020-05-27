@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 7.0f;
     public float jumpHeight = 7.0f;
     public float currentJumpHeight = 0f;
-    public float runningSpeed = 14.0f;
+    public float runningSpeed = 50f;
 
     public float mouseSensitivity = 3.0f;
     public float mouseUpDown = 0.0f;
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey("left shift") && Stats.Stamina > 1.0)
+        if (Input.GetKey("left shift") && Stats.Stamina > 1)
         {
             movementSpeed = runningSpeed;
             Stats.Sprint = true;
