@@ -22,16 +22,17 @@ public class Trader : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T) && canOpen)
         {
-            Debug.Log("T pressed");
-            if (TraderPanel.activeInHierarchy)
-            {
-                TraderPanel.SetActive(false);
-                Player.enabled = true;
-            }
-            else
+            if (!TraderPanel.activeInHierarchy)
             {
                 TraderPanel.SetActive(true);
                 Player.enabled = false;
+                Debug.Log("Opened");
+            }
+            else
+            {
+                TraderPanel.SetActive(false);
+                Player.enabled = true;
+                Debug.Log("Closed");
             }
         }
 
