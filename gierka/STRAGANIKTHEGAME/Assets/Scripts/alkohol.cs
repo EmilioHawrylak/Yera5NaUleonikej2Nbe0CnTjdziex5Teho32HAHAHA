@@ -24,7 +24,7 @@ public class alkohol : MonoBehaviour
         alkohole();
 
         drunkTimer -= Time.deltaTime;
-        Debug.Log(drunkTimer);
+        
         while (drunkTimer < 0)
         {
             drunkTimer = 0;

@@ -23,12 +23,8 @@ public class PlayerStats : MonoBehaviour
         HungerGrowth();
         ThirstGrowth();
         StaminaFalling();
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            addXP(50);
-
-        }
-        Debug.Log(XP);
+        
+        
     }
 
     private void HungerGrowth()
