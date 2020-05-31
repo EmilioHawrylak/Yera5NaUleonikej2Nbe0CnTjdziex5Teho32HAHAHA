@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 3.0f;
     public float mouseUpDown = 0.0f;
     public float mouseUpDownRange = 90.0f;
-
+    
     public PlayerStats Stats;
 
     private void Start()
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (InventoryUI.active == false)
+        if (InventoryUI.active == false && PlayerStats.active_ui == false)
         {
             keyboard();
             mouse();
