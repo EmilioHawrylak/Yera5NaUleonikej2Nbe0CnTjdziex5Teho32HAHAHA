@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
         Lvl = 0;
         active_ui = false;
         Skill_ui.SetActive(active_ui);
-        //HealthBar.MaxValue = MaxHealthPoints;
+        HealthBar.MaxValue = MaxHealthPoints;
     }
 
     void Update()
@@ -50,8 +50,8 @@ public class PlayerStats : MonoBehaviour
         StaminaFalling();
         StaminaRegen();
 
-        /*HealthBar.Value = HealthPoints;
-        StaminaBar.Value = Stamina;*/
+        HealthBar.Value = HealthPoints;
+        StaminaBar.Value = Stamina;
         if (Input.GetKeyDown(KeyCode.M))
         {
             HealthPoints -= 10;
