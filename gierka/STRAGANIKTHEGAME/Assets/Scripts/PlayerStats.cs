@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Packages.Rider.Editor.Util;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class PlayerStats : MonoBehaviour
     public int Strength, Condition, Charisma, Drivingskill, Hoochskill;
     public GameObject Skill_ui;
     public GameObject avaible_lvl;// this text in skill_ui
+    public Text Strength_txt;
+    public Text Condition_txt;
+    public Text Charisma_txt;
+    public Text Drivingskill_txt;
+    public Text Hoochskill_txt;
     public static bool active_ui;
     public static int Point_to_add;
     public int Lvl;
@@ -50,8 +56,8 @@ public class PlayerStats : MonoBehaviour
         StaminaFalling();
         StaminaRegen();
 
-        HealthBar.Value = HealthPoints;
-        StaminaBar.Value = Stamina;
+       /* HealthBar.Value = HealthPoints;
+        StaminaBar.Value = Stamina;*/
         if (Input.GetKeyDown(KeyCode.M))
         {
             HealthPoints -= 10;
@@ -107,5 +113,70 @@ public class PlayerStats : MonoBehaviour
     public void addXP(int xpquantity)
     {
         XP = XP + xpquantity;
+    }
+    public void onClickStrength()
+    {
+        if(avaible_lvl.active== true )
+        {
+            Strength += 1;
+            Strength_txt.text = Strength.ToString();
+            Point_to_add -= 1;
+            if (Point_to_add == 0)
+            {
+                avaible_lvl.SetActive(false);
+            }
+        }
+    }
+    public void onClickCondition()
+    {
+        if (avaible_lvl.active == true)
+        {
+            Condition += 1;
+            Condition_txt.text = Condition.ToString();
+            Point_to_add -= 1;
+            if (Point_to_add == 0)
+            {
+                avaible_lvl.SetActive(false);
+            }
+        }
+    }
+    public void onClickCharisma()
+    {
+        if (avaible_lvl.active == true)
+        {
+            Charisma += 1;
+            Charisma_txt.text = Charisma.ToString();
+            Point_to_add -= 1;
+            if (Point_to_add == 0)
+            {
+                avaible_lvl.SetActive(false);
+            }
+        }
+    }
+    public void onClickDrivingskill()
+    {
+        if (avaible_lvl.active == true)
+        {
+            Drivingskill += 1;
+            Drivingskill_txt.text = Drivingskill.ToString();
+            Point_to_add -= 1;
+            if (Point_to_add == 0)
+            {
+                avaible_lvl.SetActive(false);
+            }
+        }
+    }
+    public void onClickHoochskill()
+    {
+        if (avaible_lvl.active == true)
+        {
+            Hoochskill += 1;
+            Hoochskill_txt.text = Hoochskill.ToString();
+            Point_to_add -= 1;
+            if (Point_to_add == 0)
+            {
+                avaible_lvl.SetActive(false);
+            }
+        }
     }
 }

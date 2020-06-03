@@ -735,7 +735,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 582090189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203275471}
+        m_MethodName: onClickStrength
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &582090189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +1134,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 685979699}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203275471}
+        m_MethodName: onClickHoochskill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &685979699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,8 +2406,13 @@ MonoBehaviour:
   Hoochskill: 0
   Skill_ui: {fileID: 1956793925}
   avaible_lvl: {fileID: 428399587}
+  Strength_txt: {fileID: 864450161}
+  Condition_txt: {fileID: 1111726903}
+  Charisma_txt: {fileID: 754211558}
+  Drivingskill_txt: {fileID: 847418090}
+  Hoochskill_txt: {fileID: 602409215}
   Lvl: 0
-  XP: 0
+  XP: 1000
   Sprint: 0
   HealthBar: {fileID: 0}
   StaminaBar: {fileID: 0}
@@ -3060,7 +3087,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1601932692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203275471}
+        m_MethodName: onClickCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1601932692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,7 +3216,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1694869077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203275471}
+        m_MethodName: onClickDrivingskill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1694869077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,7 +3685,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2066276975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203275471}
+        m_MethodName: onClickCharisma
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2066276975
 MonoBehaviour:
   m_ObjectHideFlags: 0
