@@ -16,10 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public float mouseUpDownRange = 90.0f;
     
     public PlayerStats Stats;
+    public GameObject Eq;
 
     private void Start()
     {
         characterControler = GetComponent<CharacterController>();
+        Eq.SetActive(false);
     }
 
     private void Update()
