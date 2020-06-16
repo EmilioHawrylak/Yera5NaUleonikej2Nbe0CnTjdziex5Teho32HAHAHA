@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     
     public PlayerStats Stats;
     public GameObject Eq;
+    public GameObject TraderMenu;
 
     private void Start()
     {
@@ -26,10 +27,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (InventoryUI.active == false && PlayerStats.active_ui == false)
+        if (PlayerStats.active_ui == false && !Eq.activeInHierarchy && !TraderMenu.activeInHierarchy)
         {
             keyboard();
             mouse();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (Eq.activeInHierarchy)
+            {
+                Eq.SetActive(false);
+            }
+            else if (!Eq.activeInHierarchy)
+            {
+                Eq.SetActive(true);
+            }
         }
     }
 

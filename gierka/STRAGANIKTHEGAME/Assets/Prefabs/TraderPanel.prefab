@@ -520,10 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75d221991ae2db4ca93a745ebc806bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemIcon: {fileID: 1078573004574910730}
-  ItemName: Bottle
+  item: {fileID: 11400000, guid: efe42cb131dfcab4b966bac90462c591, type: 2}
   Cost: 10
-  Item: {fileID: 1078573003736224906}
   Description: {fileID: 1078573003492495539}
 --- !u!1 &1078573003942619011
 GameObject:

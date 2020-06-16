@@ -15,9 +15,12 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
-        Debug.Log("Picking up " + item.name);
-        bool wasPicked = NewEq.instance.Add(item);
-        if(wasPicked)
-            Destroy(gameObject);
+        if (Input.GetKey(KeyCode.P))
+        {
+            Debug.Log("Picking up " + item.name);
+            bool wasPicked = NewEq.instance.Add(item);
+            if (wasPicked)
+                Destroy(gameObject);
+        }
     }
 }

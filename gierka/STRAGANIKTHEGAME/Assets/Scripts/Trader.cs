@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Trader : MonoBehaviour
+public class Trader : Interactable
 {
     public PlayerStats Stats;
     public GameObject TraderPanel;
@@ -11,6 +11,7 @@ public class Trader : MonoBehaviour
     public Text Money;
     public TradingItem Item;
     public bool canOpen;
+    public NewEq Inventory;
 
     void Start()
     {
@@ -20,23 +21,18 @@ public class Trader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T) && canOpen)
+        Money.text = "You have " + Stats.Money.ToString() + "$.";
+        if (Input.GetKeyDown(KeyCode.T) && canOpen)
         {
-            if (!TraderPanel.activeInHierarchy)
-            {
-                TraderPanel.SetActive(true);
-                Player.enabled = false;
-                Debug.Log("Opened");
-            }
-            else
+            if (TraderPanel.activeInHierarchy)
             {
                 TraderPanel.SetActive(false);
-                Player.enabled = true;
-                Debug.Log("Closed");
+            }
+            else if (!TraderPanel.activeInHierarchy)
+            {
+                TraderPanel.SetActive(true);
             }
         }
-
-        Money.text = "You have " + Stats.Money.ToString() + "$.";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,13 +51,20 @@ public class Trader : MonoBehaviour
         }
     }
 
+    public override void Interact()
+    {
+        base.Interact();
+
+        Sell();
+    }
+
     public void Sell()
     {
         if (Stats.Money >= Item.Cost)
         {
-            Stats.Money -= Item.Cost;
-            Item.Item.SetActive(false);
-            InventoryUI.Equip(Item.Item);   
+            Debug.Log("Selling " + Item.item.name);
+            Stats.Money -= Item.Cost;          
+            bool wasSelled = Inventory.Add(Item.item);
         }
     }
 }

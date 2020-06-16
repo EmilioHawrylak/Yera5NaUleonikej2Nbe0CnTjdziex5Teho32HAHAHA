@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class TradingItem : MonoBehaviour
 {
-    public Image ItemIcon;
-    public string ItemName;
+    public Item item;
+
     public float Cost;
-    public GameObject Item;
     public Text Description;
 
     void Start()
@@ -18,6 +17,6 @@ public class TradingItem : MonoBehaviour
 
     void Update()
     {
-        Description.text = ItemName + "\n" + Cost.ToString() + "$";   
+        Description.text = item.name + "\n" + Cost.ToString() + "$";   
     }
 }
