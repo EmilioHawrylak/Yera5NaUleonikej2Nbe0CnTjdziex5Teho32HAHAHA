@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     public float HealthPoints, Hunger, Stamina, Thirst, Money;
     public float MaxHealthPoints, MaxHunger, MaxStamina, MaxThirst;
     public int Strength, Condition, Charisma, Drivingskill, Hoochskill;
+    public Slider xp_slider;
+    public Text xp;
     public GameObject Skill_ui;
     public GameObject avaible_lvl;// this text in skill_ui
     public Text Strength_txt;
@@ -62,7 +64,7 @@ public class PlayerStats : MonoBehaviour
         {
             HealthPoints -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (active_ui == true)
             {
@@ -75,6 +77,8 @@ public class PlayerStats : MonoBehaviour
                 Skill_ui.SetActive(active_ui);
             }
         }
+        xp_slider.value = XP;
+        xp.text = XP.ToString() + "/1000";
         if (XP >= 1000)//this can be changed 
         {
             Lvl += 1;
