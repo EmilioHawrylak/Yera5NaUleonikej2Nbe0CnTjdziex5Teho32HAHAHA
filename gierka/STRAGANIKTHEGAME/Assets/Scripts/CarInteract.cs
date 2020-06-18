@@ -5,7 +5,6 @@ using UnityEngine;
 public class CarInteract : MonoBehaviour
 {
     public GameObject car;
-    public GameObject hand;
     public Transform sittingLoc;
     public Vector3 offset;
     public bool insideCar;
@@ -55,13 +54,11 @@ public class CarInteract : MonoBehaviour
         //transform.rotation = car.transform.rotation;
         car.GetComponent<CarScript>().enabled = true;
         GetComponent<CharacterController>().enabled = false;
-        hand.SetActive(false);
     }
     private void outCar()
     {
         car.GetComponent<CarScript>().enabled = false;
         insideCar = false;
         GetComponent<CharacterController>().enabled = true;
-        hand.SetActive(true);
     }
 }

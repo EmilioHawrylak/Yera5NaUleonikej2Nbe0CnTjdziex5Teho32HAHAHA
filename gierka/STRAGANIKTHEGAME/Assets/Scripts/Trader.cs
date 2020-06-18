@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Trader : Interactable
+public class Trader : MonoBehaviour
 {
     public PlayerStats Stats;
     public GameObject TraderPanel;
@@ -51,20 +51,11 @@ public class Trader : Interactable
         }
     }
 
-    public override void Interact()
-    {
-        base.Interact();
-
-        Sell();
-    }
-
     public void Sell()
     {
         if (Stats.Money >= Item.Cost)
         {
-            Debug.Log("Selling " + Item.item.name);
-            Stats.Money -= Item.Cost;          
-            bool wasSelled = Inventory.Add(Item.item);
+
         }
     }
 }
