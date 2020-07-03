@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     public bool Sprint;
     public Bar HealthBar;
     public Bar StaminaBar;
-   
+
     void Start()
     {
         MaxHealthPoints = 100;
@@ -58,8 +59,8 @@ public class PlayerStats : MonoBehaviour
         StaminaFalling();
         StaminaRegen();
 
-       /* HealthBar.Value = HealthPoints;
-        StaminaBar.Value = Stamina;*/
+        /* HealthBar.Value = HealthPoints;
+         StaminaBar.Value = Stamina;*/
         if (Input.GetKeyDown(KeyCode.M))
         {
             HealthPoints -= 10;
@@ -77,21 +78,14 @@ public class PlayerStats : MonoBehaviour
                 Skill_ui.SetActive(active_ui);
             }
         }
-        xp_slider.value = XP;
-        xp.text = XP.ToString() + "/1000";
-        if (XP >= 1000)//this can be changed 
-        {
-            Lvl += 1;
-            XP = 0;
-            Point_to_add += 1;
-            avaible_lvl.SetActive(true);
-        }
+        LvlUp();
     }
 
     private void HungerGrowth()
     {
-        if(Hunger > 0)
+        if (Hunger > 0)
             Hunger -= Time.deltaTime / 6;
+
     }
 
     private void ThirstGrowth()
@@ -109,7 +103,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void StaminaRegen()
     {
-        if(!Sprint && Stamina < MaxStamina)
+        if (!Sprint && Stamina < MaxStamina)
         {
             Stamina += Time.deltaTime * 2;
         }
@@ -120,67 +114,57 @@ public class PlayerStats : MonoBehaviour
     }
     public void onClickStrength()
     {
-        if(avaible_lvl.active== true )
-        {
-            Strength += 1;
-            Strength_txt.text = Strength.ToString();
-            Point_to_add -= 1;
-            if (Point_to_add == 0)
-            {
-                avaible_lvl.SetActive(false);
-            }
-        }
+        SkillUpgrade(ref Strength, ref Strength_txt);
     }
     public void onClickCondition()
     {
-        if (avaible_lvl.active == true)
-        {
-            Condition += 1;
-            Condition_txt.text = Condition.ToString();
-            Point_to_add -= 1;
-            if (Point_to_add == 0)
-            {
-                avaible_lvl.SetActive(false);
-            }
-        }
+        SkillUpgrade(ref Condition, ref Condition_txt);
     }
     public void onClickCharisma()
     {
-        if (avaible_lvl.active == true)
-        {
-            Charisma += 1;
-            Charisma_txt.text = Charisma.ToString();
-            Point_to_add -= 1;
-            if (Point_to_add == 0)
-            {
-                avaible_lvl.SetActive(false);
-            }
-        }
+        SkillUpgrade(ref Charisma, ref Charisma_txt);
     }
     public void onClickDrivingskill()
     {
-        if (avaible_lvl.active == true)
-        {
-            Drivingskill += 1;
-            Drivingskill_txt.text = Drivingskill.ToString();
-            Point_to_add -= 1;
-            if (Point_to_add == 0)
-            {
-                avaible_lvl.SetActive(false);
-            }
-        }
+        SkillUpgrade(ref Drivingskill, ref Drivingskill_txt);
     }
     public void onClickHoochskill()
     {
+        SkillUpgrade(ref Hoochskill, ref Hoochskill_txt);
+    }
+    private void UpdateTextofLevelPoint()
+    {
+        Text lvl = avaible_lvl.GetComponent<Text>();
+        lvl.text = "Avaible " + Point_to_add + " points...";
+    }
+
+    private void SkillUpgrade(ref int skill, ref Text skill_text)
+    {
         if (avaible_lvl.active == true)
         {
-            Hoochskill += 1;
-            Hoochskill_txt.text = Hoochskill.ToString();
+            skill += 1;
+            skill_text.text = skill.ToString();
             Point_to_add -= 1;
             if (Point_to_add == 0)
             {
                 avaible_lvl.SetActive(false);
             }
+            UpdateTextofLevelPoint();
         }
     }
+
+    private void LvlUp()
+    {
+        xp_slider.value = XP;
+        xp.text = XP.ToString() + "/1000";
+        if (XP >= 1000)//this can be changed 
+        {
+            Lvl += 1;
+            XP = 0;
+            Point_to_add += 1;
+            avaible_lvl.SetActive(true);
+            UpdateTextofLevelPoint();
+        }
+    }
+
 }
