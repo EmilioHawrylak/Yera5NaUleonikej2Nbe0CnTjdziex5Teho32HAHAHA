@@ -50,12 +50,4 @@ public class Trader : MonoBehaviour
             canOpen = false;
         }
     }
-
-    public void Sell()
-    {
-        if (Stats.Money >= Item.Cost)
-        {
-
-        }
-    }
 }

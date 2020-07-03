@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class TradingItem : Interactable
 {
-    public Item item;
+    public Item TradeItem;
+    public PlayerStats Stats;
 
     public float Cost;
-    public Text Description;
-    public Button BuyButton;
+    public Text Description;                                            
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class TradingItem : Interactable
 
     void Update()
     {
-        Description.text = item.name + "\n" + Cost.ToString() + "$";   
+        Description.text = TradeItem.name + "\n" + Cost.ToString() + "$";   
     }
 
     public override void Interact()
@@ -30,8 +30,14 @@ public class TradingItem : Interactable
 
     public void Sell()
     {
-        bool bought = NewEq.instance.Add(item);
-        if (bought)
-            Destroy(gameObject);
+        if (Stats.Money >= Cost) {
+            Debug.Log(TradeItem.name + " selled.");
+            bool bought = NewEq.instance.Add(TradeItem);
+            if (bought)
+            {
+                Destroy(gameObject);
+                Stats.Money -= Cost;
+            }
+        }
     }
 }
