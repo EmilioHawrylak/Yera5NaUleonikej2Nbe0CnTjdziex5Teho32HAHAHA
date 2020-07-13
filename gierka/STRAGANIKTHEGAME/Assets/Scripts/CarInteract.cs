@@ -42,7 +42,7 @@ public class CarInteract : MonoBehaviour
             }
             else
             {
-                text.SetActive(false);
+                //text.SetActive(false);
             }
         
     }
