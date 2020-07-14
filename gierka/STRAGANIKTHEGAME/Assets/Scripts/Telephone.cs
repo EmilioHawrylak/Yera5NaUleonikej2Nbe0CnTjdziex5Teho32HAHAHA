@@ -16,7 +16,6 @@ public class Telephone : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("telephone");
             bool isOpen = animator.GetBool("open");
 
             animator.SetBool("open", !isOpen);
