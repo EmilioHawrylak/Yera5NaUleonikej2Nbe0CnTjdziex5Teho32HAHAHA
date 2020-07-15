@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
+﻿ using UnityEngine;
 
 public class Drink : Item
 {
@@ -18,6 +15,6 @@ public class Drink : Item
 
     public override void Use()
     {
-        Debug.Log("Bottle used to drink");s
+        Debug.Log("Bottle used to drink");
     }
 }
