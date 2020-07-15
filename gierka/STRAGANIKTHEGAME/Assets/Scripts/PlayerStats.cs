@@ -65,7 +65,7 @@ public class PlayerStats : MonoBehaviour
         {
             HealthPoints -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             if (active_ui == true)
             {
